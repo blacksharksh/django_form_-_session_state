@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <title>Add Task</title>
+</head>
+<body>
+    <h1 class="task_label">
+        Add Task
+    </h1>
+    <form action="{% url 'tasks:add' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <input type="submit" class="sub_btn">
+    </form>
+    <div class="task_link">
+        <a href="{% url 'tasks:task' %}">view task</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/task.css' %}">
+    <title>Tasks</title>
+</head>
+<body>
+    <h1 class="lab">Tasks</h1>
+    {% for task in tasks %}
+        <div class="taskContainer">
+            <ul><li>{{task}}</li></ul>
+        </div>
+    {% endfor %}
+
+    <div class="links">
+        <a href="{% url 'tasks:index' %}" class="back_link">back</a>
+        <a href="{% url 'tasks:add' %}" class="back_link">add task</a>
+    </div>
+</body>
+</html>
